@@ -1,4 +1,4 @@
-package shay.first;
+package com.example.chapter2;
 
 import org.junit.Test;
 
