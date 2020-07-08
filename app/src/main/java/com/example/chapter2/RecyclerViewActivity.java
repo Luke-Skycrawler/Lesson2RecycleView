@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
@@ -29,7 +30,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyAdapter
 
     private RecyclerView recyclerView,hrecyclerView;
     private MyAdapter mAdapter,hAdapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView.LayoutManager layoutManager,hlayoutManager;
     private GridLayoutManager gridLayoutManager;
 
     @Override
@@ -71,18 +72,18 @@ public class RecyclerViewActivity extends AppCompatActivity implements MyAdapter
 
         hrecyclerView = findViewById(R.id.horizontal_recycler);
 
-        recyclerView.setHasFixedSize(true);
+        hrecyclerView.setHasFixedSize(true);
 
-//        layoutManager = new LinearLayoutManager(this);
-//        gridLayoutManager = new GridLayoutManager(this, 2);
-//        recyclerView.setLayoutManager(layoutManager);
+        hlayoutManager = new LinearLayoutManager(this);
+//        gridLayoutManager = new GridLayoutManager(this, 1);
+        hrecyclerView.setLayoutManager(hlayoutManager);
 
         hAdapter = new MyAdapter(TestDataSet.getData());
         hAdapter.setOnItemClickListener(this);
-        recyclerView.setAdapter(hAdapter);
-//        LinearItemDecoration itemDecoration = new LinearItemDecoration(Color.BLUE);
-//        recyclerView.addItemDecoration(itemDecoration);
-//        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        hrecyclerView.setAdapter(hAdapter);
+        LinearItemDecoration hitemDecoration = new LinearItemDecoration(Color.BLUE);
+        hrecyclerView.addItemDecoration(hitemDecoration);
+        hrecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
     }
 
     @Override

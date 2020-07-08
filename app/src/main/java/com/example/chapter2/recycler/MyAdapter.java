@@ -16,7 +16,7 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<TestData> mDataset = new ArrayList<>();
     private IOnItemClickListener mItemClickListener;
-
+    public int type=1;
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView tvIndex;
         private TextView tvTitle;

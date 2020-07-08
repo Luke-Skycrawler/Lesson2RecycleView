@@ -7,10 +7,12 @@
     tools:context=".MainActivity">
     <androidx.recyclerview.widget.RecyclerView
         android:orientation="horizontal"
+        android:background="#333333"
         android:id="@+id/horizontal_recycler"
         android:layout_width="match_parent"
         android:layout_height="80dp"/>
     <androidx.recyclerview.widget.RecyclerView
+        android:orientation="vertical"
         android:id="@+id/recycler"
         android:background="#aaaaaa"
         android:layout_width="match_parent"
